@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width,initial scale=1'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.css"
+    integrity="sha512-RVmrWua3k1yTDEOg4Yzs2bK5+Thh7nM6jrhDq/6/5/Mwa0JbYe4pP4YMK5sqghKz01T3DgrwYc57Jaf1PSurCg=="
+    crossorigin="anonymous" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/96973c893.js"></script>
+  <style>
+    body {
+      margin-top: 0px;
+      padding: 0;
+    }
+
+    .navbar-brand {
+      transition: 0.5s;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .navbar-brand span {
+      position: absolute;
+      display: block;
+    }
+
+    .nav-link {
+      color: #03e9f4;
+      text-decoration: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      transition: 0.5s;
+    }
+
+    .navbar-brand span:nth-child(1) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, white);
+      animation: animate1 4s linear infinite;
+      animation-delay: 0.1s;
+
+    }
+
+    @keyframes animate1 {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    .navbar-brand span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, white);
+      animation: animate2 4s linear infinite;
+      animation-delay: 0.95s;
+
+    }
+
+    @keyframes animate2 {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    .navbar-brand span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, white);
+      animation: animate3 4s linear infinite;
+      animation-delay: 1.78s;
+
+    }
+
+    @keyframes animate3 {
+      0% {
+        right: -100%;
+      }
+
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    .navbar-brand span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, white);
+      animation: animate4 4s linear infinite;
+      animation-delay: 2.8s;
+
+    }
+
+    @keyframes animate4 {
+      0% {
+        bottom: -100%;
+      }
+
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+
+    .nav-link:hover {
+      background: #03e9f4;
+      color: #050801;
+      box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 200px #03e9f4;
+    }
+
+    h1 {
+      font-family: Gotham Book, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial;
+    }
+
+    #img2,
+    .img22,
+    #img4,
+    #img5 {
+      height: 18rem;
+      float: left;
+    }
+
+    #img6 {
+      height: 20rem;
+    }
+
+    #img3 {
+      display: none;
+    }
+
+    @media all and (max-width: 500px) {
+
+      #img2,
+      .img22 {
+        display: none;
+      }
+
+      #img3 {
+        display: block;
+        height: 12rem;
+      }
+
+      #img4 {
+        height: 14rem;
+      }
+
+      #img5 {
+        height: 12rem;
+      }
+
+      #img6 {
+        height: 10rem;
+      }
+    }
+
+    .s1,
+    .s2,
+    .s3,
+    .s4,
+    .s5 {
+      /* background: url("pexels-pixabay-273230.jpg"); */
+      background-image: linear-gradient(to right, rgb(247, 118, 167), rgb(252, 173, 173));
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .logo {
+      width: 25px;
+      margin-bottom: 3px;
+      margin-right: 3px;
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <a class="navbar-brand p-1" href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <img class="logo" src="logo.png">Brand Binds</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="whatwedo.html">What we do?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="howwedo.html">How we do?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="creative.html">Creative Process</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div id="fullpage">
+    <div class="section s1 text-center">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="mb-5">
+                    <div data-aos="fade-right">
+                      <h1 style="font-size: 3rem;font-style: italic;">Welcome</h1>
+                    </div>
+                  </div>
+                  <div class="mt-3 mb-5">
+                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                      <h1 style="font-style: italic;">To</h1>
+                    </div>
+                  </div>
+                  <div class="mt-3 mb-5">
+                    <div data-aos="zoom-in-up">
+                      <h1 style="font-style: italic;font-size: 3rem;"><u><b>Brand Binds</b></u></h1>
+                    </div>
+                  </div>
+                  <div data-aos="fade-right">
+                    <h4 class="text-center" style="color: #1042e6;">We are <b><span class="type"
+                          style="color: #f11506;"></b></span></h4>
+                  </div>
+                </div>
+                <div data-aos="zoom-in-up" class="col-lg-6">
+                  <img class="img22" class="card-img mt-3" src="svg\undraw_Hello_qnas.svg" alt="Card image">
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5 text-left m-3 p-3"
+                  style="box-shadow: 10px 10px #a0a0a0;background-image: linear-gradient(to right, rgb(236, 118, 247), rgb(210, 218, 241));;border-radius: 0.5rem;">
+                  <h1>We can take you to new heights</h1>
+                  <h3>By transforming your Brand</h3>
+                  <ul>
+                    <li>
+                      <h4><span class="badge badge-danger">Digitally</span></h4>
+                    </li>
+                    <li>
+                      <h4><span class="badge badge-danger">Creatively</span></h4>
+                    </li>
+                    <li>
+                      <h4><span class="badge badge-danger">Socially</span></h4>
+                    </li>
+                  </ul>
+                </div>
+                <div data-aos="zoom-in-up" class="col-lg-5 m-auto p-auto">
+                  <img class="img22" class="card-img mt-3" src="svg\undraw_Data_trends_re_2cdy.svg" alt="Card image">
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container text-center">
+              <div class="row m-4 text-center">
+                <div class="col-lg-6">
+                  <img class="img22" class="card-img mt-3" src="svg\undraw_target_kriv.svg" alt="Card image">
+               </div>
+                <div class="col-lg-6">
+                <h4>"Strategy is the foundation of our approach. It's the lens we utilize to identify what your brands
+                  stands for, to whom it sould speak, what it should say and where it should say."</h4>
+                  <h6>~Brandbinds</h6>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="section s2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-6">
+            <img id="img2" class="card-img mt-3" src="svg\undraw_team_ih79.svg" alt="Card image">
+            <img id="img3" class="card-img mt-3" src="svg\undraw_Team_page_re_cffb.svg" alt="Card image">
+          </div>
+          <div class="col-lg-6 col-md-6 text-center" id="aboutus">
+            <h3>About us</h3>
+            <h1 style="padding: 4px; width: 57%; height: 10px; background-color: tomato; margin: 0.3px auto auto auto;"
+              class="mt-1"></h1>
+            <p>We are a brand consultant, digital design, marketing, and analytics agency
+              based in Bhubaneswar, India.<br>
+              We create beautiful brands, bespoke websites and make analytical decisions that
+              empower our clients, create results, and help them grow.
+              Brand Binds is a digital branding agency offering a wide array of digital branding
+              services such as consultancy, design, implementation and measurement. Our passion is
+              derived from the broad requirements of clients we deal with, helping us create
+              solutions that match their need. We have vast experience in creative domain, alongside
+              project experience and development.<br>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section s3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-6">
+            <img id="img4" class="card-img mt-3" src="svg\undraw_creative_thinking_b3bc.svg" alt="Card image">
+          </div>
+          <div class="col-lg-6 col-md-6 text-center" id="aboutus">
+            <h3>Our Approach</h3>
+            <h1 style="padding: 4px; width: 57%; height: 10px; background-color: tomato; margin: 0.3px auto auto auto;"
+              class="mt-1"></h1>
+            <p>We are Digital Narrators, Thinkers, Tinkers, Designers and Brand Binders.
+              It all starts over coffee with a pen and paper. We sit down with you to understand your
+              vision & mission, what you want to achieve, and what makes you unique.<br>
+              From there we determine how to narrate your story across the digital world, and
+              provide the digital tools and technology to ensure your success.<br>
+              WE DON'T SELL.
+              WE CREATE STORIES THAT SELL.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section s4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-6">
+            <img id="img5" class="card-img mt-3" src="svg\undraw_ideas_s70l.svg" alt="Card image">
+          </div>
+          <div class="col-lg-6 col-md-6 text-center" id="aboutus">
+            <h3>Our Philosophy</h3>
+            <h1 style="padding: 4px; width: 57%; height: 10px; background-color: tomato; margin: 0.3px auto auto auto;"
+              class="mt-1"></h1>
+            <p><b>Relatability : </b>
+              To relate is to understand, make connections, and identify with. We strive to
+              understand our clients unique stories and visions so that we can successfully relate that
+              to their customers, staff, and key stakeholders.<br>
+              <b>Simplicity : </b>
+              To make something simple is not always easy, as it requires a complete understanding.
+              We endeavor to combine our experience and creativity to produce simple, seamless
+              and enjoyable experiences.<br>
+              <b>Story : </b>
+              Every story is unique, and we're interested in understanding and telling yours. We
+              combine wisdom and technology, experience and creativity, in order to realize your
+              vision and tell your unique story.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section s5">
+      <div class="container" style="margin-top: 5vh;">
+        <div class="col-lg-12 text-center">
+          <img id="img6" src="svg\undraw_Smiley_face_re_9uid.svg" alt="">
+        </div>
+      </div>
+      <div class="container" style="margin-top: 5px;">
+        <div class="text-center">
+          <h3 class="mt-4">Eager to provide you our services ! See you till then !</h3>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 30px">
+        <footer class="text-center" style="text-decoration: none;">
+          <a href="#" style="margin: 17px; color: black;">Brandbinds &copy; 2021</a>
+          <a href="" style="margin: 17px; color: black;">Privacy and Legal</a>
+          <a href="contact.html" style="margin: 17px; color: black;">Contact</a>
+          <a href="" style="margin: 17px; color: black;"> Careers</a>
+          <a href="" style="margin: 17px; color: black;">News</a>
+          <a href="" style="margin: 17px; color: black;">Forums</a>
+
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js"
+    integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ=="
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script type="text/javascript" src="typed.js"></script>
+  <script src="https://kit.fontawesome.com/996973c893.js"></script>
+  <script type="text/javascript">
+    var typed = new Typed(".type", {
+      strings: [
+        "Digital Narrators",
+        "Thinkers",
+        "Tinkers",
+        "Designers",
+        "Brand Binders",
+      ],
+      typeSpeed: 70,
+      backSpeed: 70,
+      smartBackspace: false,
+      loop: true // Default value
+    });
+  </script>
+  <script>
+    AOS.init({
+      duration: 2500,
+    });
+  </script>
+  <script>
+    new fullpage('#fullpage', {
+      autoScrolling: true,
+      responsiveWidth: 0
+    })
+  </script>
+  <script>
+    $('.carousel').carousel({
+      interval: 15000
+    });
+  </script>
+</body>
+
+</html>
